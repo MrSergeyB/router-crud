@@ -1,0 +1,20 @@
+.container {
+  padding: 1rem;
+  margin-top: 10rem;
+  background-color: #e8eaed;
+  width: 320px;
+}
+
+.btn-box {
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn {
+  color: white;
+  text-decoration: none;
+  background-color: #4469ae;
+  padding: 0.5rem;
+  text-align: center;
+}

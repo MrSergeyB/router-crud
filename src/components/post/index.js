@@ -1,2 +1,2 @@
-import Post from "./new";
+import Post from "./post";
 export default Post;
