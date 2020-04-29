@@ -1,31 +1,32 @@
 import React from "react";
 import "./post.css";
 
-const Post = (props) => {
+const Post = ({post}) => {
   return (
     <div className="post-wrapper">
       <div className="header">
         <img
           className="avatar"
-          src={require("../../assets/img/user1.png")}
-          alt={props.author}
+          src={require("../../assets/img/user2.png")}
+          alt={post.author}
         />
-        <h3 className="author">{props.author}PopoP</h3>
-        <p className="time">{props.created}4 min</p>
+        <h3 className="author">{post.author}</h3>
+        <p className="time">{post.created}</p>
       </div>
       <div className="message-box">
-        <p>{props.message} fasfs</p>
+        <p>{post.content}</p>
       </div>
       <div className="fotter">
         <div>
-          <span class="material-icons">thumb_up</span>
+          <span className="material-icons">thumb_up</span>
           <span>Нравится</span>
         </div>
         <div>
-          <span class="material-icons">comment</span>
+          <span className="material-icons">comment</span>
           <span>Комментировать</span>
         </div>
       </div>
+
       <div className="input-box">
         <input
           className="input"

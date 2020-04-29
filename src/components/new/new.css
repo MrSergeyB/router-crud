@@ -1,5 +1,16 @@
+.delete-button-box {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.delete-btn {
+  text-decoration: none;
+  color: black;
+}
+
 .post-box {
-  background-color: #f5f6f7;
+  text-align: center;
+  margin-top: 1rem;
 }
 
 .post-btn {
@@ -8,4 +19,10 @@
   background-color: #4469ae;
   padding: 0.5rem;
   text-align: center;
+}
+
+.new-post-box {
+  border: 1px solid #ccc;
+  width: 300px;
+  padding: 1rem;
 }
