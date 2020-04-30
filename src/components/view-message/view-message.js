@@ -1,21 +1,32 @@
 import React, {useState, useEffect} from "react";
 import "./view-message.css";
+import {useHistory} from "react-router-dom";
 
-const ViewMessage = ({id}) => {
+const ViewMessage = ({match, handleDelete, handleEdit}) => {
+  let history = useHistory();
   const [post, setPost] = useState({});
   const [loading, setLoading] = useState(false);
+  const [editMode, setEditMode] = useState(false);
+  const [editedPost, setEditedPost] = useState("");
 
   useEffect(() => {
-    getPost();
-  }, []);
+    getPost(match.params.id);
 
-  const getPost = async () => {
+    //eslin-ignore-next-line
+  }, [match.params.id]);
+
+  const getPost = async (id) => {
     setLoading(true);
-    const res = await fetch("/posts/:id");
+    const res = await fetch(`/posts/${id}`);
     const data = await res.json();
 
     setPost(data);
     setLoading(false);
+  };
+
+  const handleClickDelete = async (id) => {
+    handleDelete(id);
+    history.push("/posts");
   };
 
   if (loading) {
@@ -33,14 +44,42 @@ const ViewMessage = ({id}) => {
           <p className="time">{post.created}</p>
         </div>
         <div className="message-box">
-          <p>{post.content}</p>
+          {editMode ? (
+            <input
+              className="input"
+              type="text"
+              value={editedPost}
+              onChange={(e) => setEditedPost(e.target.value)}
+            />
+          ) : (
+            <p>{post.content}</p>
+          )}
         </div>
         <div className="fotter">
           <div>
-            <button className="edit-btn">Изменить</button>
+            {editMode ? (
+              <button
+                onClick={() => handleEdit(editedPost)}
+                className="edit-btn"
+              >
+                Сохранить
+              </button>
+            ) : (
+              <button
+                onClick={() => setEditMode(!editMode)}
+                className="edit-btn"
+              >
+                Изменить
+              </button>
+            )}
           </div>
           <div>
-            <button className="delete-btn">Удалить</button>
+            <button
+              onClick={() => handleClickDelete(match.params.id)}
+              className="delete-btn"
+            >
+              Удалить
+            </button>
           </div>
         </div>
 

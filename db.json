@@ -2,39 +2,15 @@
   "posts": [
     {
       "id": 1,
-      "content": "Пост относящийся к курсу Реакт",
-      "created": "5 мин",
-      "author": "User1"
+      "content": "Другой пост относящийся к курсу Реакт",
+      "created": "4 мин",
+      "author": "User2"
     },
     {
       "id": 2,
       "content": "Другой пост относящийся к курсу Реакт",
       "created": "4 мин",
       "author": "User2"
-    },
-    {
-      "id": 3,
-      "content": "Третий пост относящийся к курсу Реакт",
-      "created": "2 мин",
-      "author": "User3"
-    },
-    {
-      "id": "01871170-8a2a-11ea-bf78-ff721cb25c52",
-      "content": "asdf",
-      "created": "59 минуты назад",
-      "author": "UserNew"
-    },
-    {
-      "id": "4a20bb20-8a2a-11ea-b142-ad9a584d595f",
-      "content": "fasdf",
-      "created": "1 минуты назад",
-      "author": "UserNew"
-    },
-    {
-      "id": "52f85f50-8a2a-11ea-b589-d5afd7590c28",
-      "content": "asdf",
-      "created": "1 минуты назад",
-      "author": "UserNew"
     }
   ]
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import "./post.css";
+import {Link} from "react-router-dom";
 
 const Post = ({post}) => {
   return (
@@ -12,6 +13,13 @@ const Post = ({post}) => {
         />
         <h3 className="author">{post.author}</h3>
         <p className="time">{post.created}</p>
+        <Link
+          to={`/posts/${post.id}`}
+          className="btn btn-outline-warning btn-block my-1"
+        >
+          {" "}
+          <span className="material-icons">keyboard_arrow_down</span>
+        </Link>
       </div>
       <div className="message-box">
         <p>{post.content}</p>

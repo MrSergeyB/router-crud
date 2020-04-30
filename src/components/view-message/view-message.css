@@ -1,0 +1,15 @@
+.delete-btn {
+  color: white;
+  text-decoration: none;
+  background-color: #dc3545;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.edit-btn {
+  color: white;
+  text-decoration: none;
+  background-color: #4469ae;
+  padding: 0.5rem;
+  text-align: center;
+}
