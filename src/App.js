@@ -66,18 +66,24 @@ function App() {
     }
   };
 
-  const handleEdit = async (editedPost) => {
+  const handleEdit = async (editedPost, id, created) => {
     try {
       setLoading(true);
-      console.log(editedPost);
-      await fetch("/posts", {
-        method: "POST",
+
+      await fetch(`/posts/${id}`, {
+        method: "PUT",
         headers: {
           Accept: "application/json, text/plain, */*",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(editedPost),
+        body: JSON.stringify({
+          id: id,
+          content: editedPost,
+          created: created,
+          author: "User2",
+        }),
       });
+
       getPosts();
       setLoading(false);
     } catch (err) {

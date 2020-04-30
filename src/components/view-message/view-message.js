@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import "./view-message.css";
-import {useHistory} from "react-router-dom";
+import {useHistory, Link} from "react-router-dom";
 
 const ViewMessage = ({match, handleDelete, handleEdit}) => {
   let history = useHistory();
@@ -40,8 +40,12 @@ const ViewMessage = ({match, handleDelete, handleEdit}) => {
             src={require("../../assets/img/user2.png")}
             alt={post.author}
           />
+
           <h3 className="author">{post.author}</h3>
           <p className="time">{post.created}</p>
+          <Link to="/posts" className="home-btn">
+            X
+          </Link>
         </div>
         <div className="message-box">
           {editMode ? (
@@ -59,7 +63,7 @@ const ViewMessage = ({match, handleDelete, handleEdit}) => {
           <div>
             {editMode ? (
               <button
-                onClick={() => handleEdit(editedPost)}
+                onClick={() => handleEdit(editedPost, post.id, post.created)}
                 className="edit-btn"
               >
                 Сохранить
@@ -81,14 +85,6 @@ const ViewMessage = ({match, handleDelete, handleEdit}) => {
               Удалить
             </button>
           </div>
-        </div>
-
-        <div className="input-box">
-          <input
-            className="input"
-            type="text"
-            placeholder="Напишите комментарий..."
-          />
         </div>
       </div>
     );
